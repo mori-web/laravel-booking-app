@@ -1,8 +1,9 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
   <!-- Primary Navigation Menu -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="container">
     <div class="flex justify-between h-16">
-      <div class="flex">
+      <div class="flex justify-between">
+
         <!-- Logo -->
         <div class="shrink-0 flex items-center">
           <a href="{{ route('top') }}">
@@ -22,10 +23,20 @@
             アクセス案内
           </x-nav-link>
         </div>
+
+        
       </div>
 
       <!-- Settings Dropdown -->
       <div class="hidden sm:flex sm:items-center sm:ml-6">
+        <!-- Navigation Links -->
+
+        <div class="mr-5">
+          <a class="btn btn-primary" href="{{ route('contact.index') }}">
+            お問い合わせ
+          </a>
+        </div>
+
         <x-dropdown align="right" width="48">
           <x-slot name="trigger">
             <button
