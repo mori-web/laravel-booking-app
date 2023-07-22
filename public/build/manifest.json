@@ -1,13 +1,17 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-14394fb7.css",
+    "file": "assets/app-67dc80b6.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
   "resources/css/style.css": {
-    "file": "assets/style-53280112.css",
+    "file": "assets/style-81b5655c.css",
     "isEntry": true,
     "src": "resources/css/style.css"
+  },
+  "resources/images/stay-fv.jpg": {
+    "file": "assets/stay-fv-122ecc00.jpg",
+    "src": "resources/images/stay-fv.jpg"
   },
   "resources/js/app.js": {
     "file": "assets/app-d5e6a928.js",

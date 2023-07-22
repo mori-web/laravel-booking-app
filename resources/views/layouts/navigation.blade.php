@@ -32,7 +32,7 @@
         <!-- Navigation Links -->
 
         <div class="mr-5">
-          <a class="btn btn-primary" href="{{ route('contact.index') }}">
+          <a class="btn btn-primary" href="{{ route('contact.create') }}">
             お問い合わせ
           </a>
         </div>

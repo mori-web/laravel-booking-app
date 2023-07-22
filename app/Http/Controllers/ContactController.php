@@ -3,17 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Contact;
 
 class ContactController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    //お問い合わせ一覧ページ(管理者)
     public function index()
     {
-        return view('contact');
+        return view('contact.index');
     }
 
     /**
@@ -23,18 +20,20 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+        return view('contact.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    // お問い合わせ内容の新規登録処理
     public function store(Request $request)
     {
-        //
+        $contact = Contact::create([
+          'title' => $request->title,
+          'name' => $request->name,
+          'email' => $request->email,
+          'status' => $request->status,
+          'message' => $request->message,
+        ]);
+        return view('contact.thanks', compact('contact'));
     }
 
     /**
