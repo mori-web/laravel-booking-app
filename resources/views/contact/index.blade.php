@@ -20,6 +20,10 @@
     </li>
     @endforeach
   </ul>
-
+  <div class="pb-4">
+    {{ $contacts->links() }}
+  </div>
 </div>
+
+
 @endsection

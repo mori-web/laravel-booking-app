@@ -12,7 +12,7 @@ class ContactController extends Controller
     //お問い合わせ一覧ページ(管理者)
     public function index()
     {
-        $contacts = Contact::orderBy('id', 'desc')->get();
+        $contacts = Contact::orderBy('id', 'desc')->paginate(5);
         foreach($contacts as $contact) {
           if($contact->status === 'unfinished') {
             $contact->status = '未対応';
