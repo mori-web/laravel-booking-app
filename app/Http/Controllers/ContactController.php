@@ -61,7 +61,7 @@ class ContactController extends Controller
     {
       $validated = $request->validated();
       $contact->update($validated);
-      return to_route('contact.index');
+      return to_route('contact.index',compact('message'));
     }
 
     // 削除の処理

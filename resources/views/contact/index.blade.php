@@ -3,6 +3,7 @@
 @section('title', 'お問い合わせ一覧ページ')
 
 @section('content')
+{{ $message }}
 <div class="container mt-5">
   <h2 class="h2">お問い合わせ一覧</h2>
   <ul class="list-group mt-3">
