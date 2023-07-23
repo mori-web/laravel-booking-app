@@ -16,6 +16,9 @@ class ResetPasswordNotification extends Notification
      *
      * @return void
      */
+
+    public $url;
+
     public function __construct($url)
     {
         $this->url = $url;
@@ -40,11 +43,11 @@ class ResetPasswordNotification extends Notification
      */
     public function toMail($notifiable)
     {
-        return (new MailMessage)
-            ->subject(config('app.name'). ' パスワードリセットURLの送付')
-            ->greeting('いつもご利用頂きありがとうございます')
-            ->action('パスワードリセット', $this->url)
-            ->line('こちらからパスワードリセットを行ってください');
+        return (new MailMessage())
+          ->subject(config('app.name'). ' パスワードリセットURLの送付')
+          ->greeting('いつもご利用頂きありがとうございます')
+          ->action('パスワードリセット', $this->url)
+          ->line('こちらからパスワードリセットを行ってください');
     }
 
     /**
@@ -56,7 +59,7 @@ class ResetPasswordNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            //
+          //
         ];
     }
 }

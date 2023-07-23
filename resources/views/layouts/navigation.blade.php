@@ -19,9 +19,11 @@
           <x-nav-link :href="route('access')" :active="request()->routeIs('access')">
             アクセス案内
           </x-nav-link>
+          @auth
           <x-nav-link :href="route('contact.index')" :active="request()->routeIs('contact.index')">
             お問い合わせ一覧
           </x-nav-link>
+          @endauth
         </div>
 
         
@@ -90,6 +92,7 @@
             <x-dropdown-link :href="route('register')">
               {{ __('新規登録') }}
             </x-dropdown-link>
+            
           </x-slot>
           @endguest
 
