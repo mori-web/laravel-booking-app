@@ -13,14 +13,14 @@
 
         <!-- Navigation Links -->
         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-          {{-- <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-            {{ __('Dashboard') }}
-          </x-nav-link> --}}
-          <x-nav-link :href="route('top')" :active="request()->routeIs('dashboard')">
+          <x-nav-link :href="route('top')" :active="request()->routeIs('top')">
             TOP
           </x-nav-link>
-          <x-nav-link :href="route('access')" :active="request()->routeIs('dashboard')">
+          <x-nav-link :href="route('access')" :active="request()->routeIs('access')">
             アクセス案内
+          </x-nav-link>
+          <x-nav-link :href="route('contact.index')" :active="request()->routeIs('contact.index')">
+            お問い合わせ一覧
           </x-nav-link>
         </div>
 

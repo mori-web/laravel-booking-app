@@ -11,14 +11,18 @@ class ContactController extends Controller
     //お問い合わせ一覧ページ(管理者)
     public function index()
     {
-        return view('contact.index');
+        $contacts = Contact::orderBy('id', 'desc')->get();
+        foreach($contacts as $contact) {
+          if($contact->status === 'unfinished') {
+            $contact->status = '未対応';
+          } else {
+            $contact->status = '対応済';
+          };
+        }
+        return view('contact.index',compact('contacts'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    //作成画面の表示
     public function create()
     {
         return view('contact.create');
@@ -28,52 +32,38 @@ class ContactController extends Controller
     public function store(ContactRequest $request)
     {
         $contact = $request->validated();
+        $contact['status'] = 'unfinished';
         Contact::create($contact);
         return view('contact.thanks', compact('contact'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    // 詳細ページの表示
+    public function show(Contact $contact)
     {
-        //
+      if($contact->status === 'unfinished') {
+        $contact->status = '未対応';
+      } else {
+        $contact->status = '対応済';
+      };
+        return view('contact.show', compact('contact'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    // 編集ページの表示
+    public function edit(Contact $contact)
     {
-        //
+      // dd($contact);
+        return view('contact.edit', compact('contact'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    // 更新の処理
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    // 削除の処理
     public function destroy($id)
     {
-        //
+        dd($id);
     }
 }

@@ -27,10 +27,6 @@
       <input type="text" name="email" id="email" class="form-control" value="{{ old('email') }}">
     </div>
 
-    <div class="mb-3">
-      <input type="hidden" name="status" value="unfinished">
-    </div>
-
     <div class="mb-3 form-group">
       <label for="message" class="form-label">お問い合わせ内容</label>
       <x-input-error :messages="$errors->get('message')" />
