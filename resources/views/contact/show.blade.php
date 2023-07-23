@@ -13,9 +13,7 @@
         <h2 class="h2">
           {{ $contact->title }}
         </h2>
-        <div class="mt-3">
-          対応状況：{{ $contact->status }}
-        </div>
+        <p class="mt-4 btn {{ $contact->status === '未対応' ? 'btn-primary' : 'btn-success' }}">対応状況：{{ $contact->status }}</p>
         <div class="mt-3">
           お名前：{{ $contact->name }} 様
         </div>
@@ -28,21 +26,15 @@
         </div>
       </div>
   
-      <div class="d-flex">
-        <div class="ml-3">
-          <a class="btn btn-outline-primary" href="{{ route('contact.edit',$contact) }}">編集</a>
-        </div>
-      </div>
-  
     </div>
-    {{-- <div class="card-body">
-      {{ $cotact->message }}
+  </div>
+  <div class="d-flex mt-3">
+    <div class="mt-2">
+      <a class="btn btn-outline-primary" href="{{ route('contact.edit',$contact) }}">編集</a>
     </div>
-    <div class="card-footer">
-      <span class="mr-2 float-right">
-        投稿日時 {{ $contact->created_at->diffForHumans() }}
-      </span>
-    </div> --}}
+    <div class="mt-2 ml-2">
+      <a class="btn btn-outline-primary" onClick="history.back()">戻る</a>
+    </div>
   </div>
 </div>
 @endsection
