@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ContactRequest;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 
@@ -24,15 +25,10 @@ class ContactController extends Controller
     }
 
     // お問い合わせ内容の新規登録処理
-    public function store(Request $request)
+    public function store(ContactRequest $request)
     {
-        $contact = Contact::create([
-          'title' => $request->title,
-          'name' => $request->name,
-          'email' => $request->email,
-          'status' => $request->status,
-          'message' => $request->message,
-        ]);
+        $contact = $request->validated();
+        Contact::create($contact);
         return view('contact.thanks', compact('contact'));
     }
 

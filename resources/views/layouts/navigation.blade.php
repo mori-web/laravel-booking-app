@@ -88,7 +88,7 @@
             </x-dropdown-link>
 
             <x-dropdown-link :href="route('register')">
-              {{ __('NewRegister') }}
+              {{ __('新規登録') }}
             </x-dropdown-link>
           </x-slot>
           @endguest
@@ -154,7 +154,7 @@
           {{ __('Login') }}
         </x-responsive-nav-link>
         <x-responsive-nav-link :href="route('register')">
-          {{ __('NewRegister') }}
+          {{ __('新規登録') }}
         </x-responsive-nav-link>
         @endguest
 
