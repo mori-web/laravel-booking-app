@@ -19,15 +19,15 @@ class ContactRequest extends FormRequest
 
     public function messages()
     {
-      return [
-        'title.required' => '《タイトルは必ず書いてください》',
-        'title.max' => '《255文字以下で指定してください》',
-        'name.required' => '《名前は必ず書いてください》',
-        'name.max' => '《50文字以下で指定してください》',
-        'email.required' => '《メールアドレスは必ず書いてください》',
-        'email.max' => '《100文字以下で指定してください》',
-        'message.required' => '《内容は必ず書いてください》',
-        'message.max' => '《1000文字以下で指定してください》',
-      ];
+        return [
+          'title.required' => '《タイトルは必ず書いてください》',
+          'title.max' => '《255文字以下で指定してください》',
+          'name.required' => '《名前は必ず書いてください》',
+          'name.max' => '《50文字以下で指定してください》',
+          'email.required' => '《メールアドレスは必ず書いてください》',
+          'email.max' => '《100文字以下で指定してください》',
+          'message.required' => '《内容は必ず書いてください》',
+          'message.max' => '《1000文字以下で指定してください》',
+        ];
     }
 }
