@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
+use App\Http\Requests\ContactUpdateRequest;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 
@@ -51,17 +52,16 @@ class ContactController extends Controller
     // 編集ページの表示
     public function edit(Contact $contact)
     {
+      // dd($contact);
         return view('contact.edit', compact('contact'));
     }
 
     // 更新の処理
-    public function update(ContactRequest $request, Contact $contact)
+    public function update(ContactUpdateRequest $request, Contact $contact)
     {
-      // dd($contact);
       $validated = $request->validated();
-      $validated['status'] = 'unfinished';
       $contact->update($validated);
-      return view('contact.index');
+      return to_route('contact.index');
     }
 
     // 削除の処理
