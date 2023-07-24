@@ -13,8 +13,10 @@
         <h2 class="h2">
           {{ $contact->title }}
         </h2>
-        <p class="mt-4 btn {{ $contact->status === '未対応' ? 'btn-primary' : 'btn-success' }}">対応状況：{{ $contact->status }}</p>
-        <div class="mt-3">
+        <p class="mt-4">お問い合わせ日時：{{ $contact->created_at->formatLocalized('%Y年%m月%d日 %H時%M分') }}</p>
+        <p class="mt-5">管理者対応日時：{{ $contact->updated_at->formatLocalized('%Y年%m月%d日 %H時%M分') }}</p>
+        <p class="mt-2 btn {{ $contact->status === '未対応' ? 'btn-primary' : 'btn-success' }}">対応状況：{{ $contact->status }}</p>
+        <div class="mt-5">
           お名前：{{ $contact->name }} 様
         </div>
         <div class="mt-3">

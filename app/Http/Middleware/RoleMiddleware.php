@@ -16,6 +16,9 @@ class RoleMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
+      if(auth()->user()->role === 'super_admin') {
         return $next($request);
+      }
+      return to_route('top');
     }
 }
