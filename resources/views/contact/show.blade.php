@@ -27,8 +27,12 @@
           {{ $contact->message }}
         </div>
       </div>
-  
+      
     </div>
+  </div>
+  <div class="bg-white p-4">
+    <p>メモ：</p>
+    {{ $contact->memo }}
   </div>
   <div class="d-flex mt-3">
     <div class="mt-2">

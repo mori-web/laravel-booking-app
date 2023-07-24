@@ -10,6 +10,13 @@ class ContactUpdateRequest extends FormRequest
     {
         return [
             'status' => 'required',
+            'memo' => 'max:1000'
+        ];
+    }
+    public function messages()
+    {
+        return [
+          'memo.max' => '《1000文字以下で指定してください》',
         ];
     }
 }

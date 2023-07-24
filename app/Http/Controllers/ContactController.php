@@ -6,6 +6,8 @@ use App\Http\Requests\ContactRequest;
 use App\Http\Requests\ContactUpdateRequest;
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use Illuminate\Support\Facades\Gate;
+
 
 class ContactController extends Controller
 {
@@ -33,6 +35,7 @@ class ContactController extends Controller
     public function store(ContactRequest $request)
     {
         $contact = $request->validated();
+        $contact['memo'] = '';
         $contact['status'] = 'unfinished';
         Contact::create($contact);
         return view('contact.thanks', compact('contact'));
@@ -59,6 +62,7 @@ class ContactController extends Controller
     // 更新の処理
     public function update(ContactUpdateRequest $request, Contact $contact)
     {
+      // dd($request);
       $validated = $request->validated();
       $contact->update($validated);
       return to_route('contact.index');

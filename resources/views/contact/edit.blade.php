@@ -37,6 +37,11 @@
           対応済み
         </label>
       </div>
+      <div class="mb-3 mt-3 form-group">
+        <label for="memo" class="form-label">メモ</label>
+        <x-input-error :messages="$errors->get('memo')" />
+        <textarea class="form-control" id="memo" name="memo" rows="5">{{ old('memo') }}</textarea>
+      </div>
     </div>
 
     <div class="d-flex mt-5">

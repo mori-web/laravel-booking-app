@@ -14,11 +14,13 @@
         <!-- Navigation Links -->
         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
 
-          {{-- @if (auth()->check() && auth()->user()->role === 'super_admin')
+          <!-- Gateで処理する場合 -->
+          {{-- @can('adminGate')
           <x-nav-link :href="route('top')" :active="request()->routeIs('top')">
             TOP
           </x-nav-link>
-          @endif --}}
+          @endcan --}}
+
           <x-nav-link :href="route('top')" :active="request()->routeIs('top')">
             TOP
           </x-nav-link>

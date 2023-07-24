@@ -13,6 +13,7 @@ class ContactRequest extends FormRequest
           'name'=> 'required|max:50',
           'email'=> 'required|max:100',
           'status' => '',
+          'memo' => 'max:1000',
           'message'=> 'required|max:1000',
         ];
     }
