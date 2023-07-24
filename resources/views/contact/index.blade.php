@@ -16,6 +16,10 @@
         <p class="mt-2 mb-3">
           {{ Str::limit($contact->message, 50, '...') }}
         </p>
+        <p class="mt-5 mb-3">
+          メモ：
+          {{ Str::limit($contact->memo, 50, '...') }}
+        </p>
       </a>
     </li>
     @endforeach

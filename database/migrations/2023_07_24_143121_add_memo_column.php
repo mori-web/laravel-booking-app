@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('contacts', function (Blueprint $table) {
-            $table->text('memo')->after('status');
+            $table->text('memo')->after('status')->nullable();
         });
     }
 

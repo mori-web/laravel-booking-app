@@ -55,14 +55,12 @@ class ContactController extends Controller
     // 編集ページの表示
     public function edit(Contact $contact)
     {
-      // dd($contact);
         return view('contact.edit', compact('contact'));
     }
 
     // 更新の処理
     public function update(ContactUpdateRequest $request, Contact $contact)
     {
-      // dd($request);
       $validated = $request->validated();
       $contact->update($validated);
       return to_route('contact.index');
