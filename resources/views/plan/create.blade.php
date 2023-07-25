@@ -25,9 +25,8 @@
     </div>
 
     <div class="mb-3">
-      <label for="image" class="form-label">画像</label>
       <x-input-error :messages="$errors->get('image')" />
-      <input class="form-control" type="file" name="image" id="image">
+      <input class="form-control-file" type="file" name="image" id="image">
     </div>
 
     <div class="mb-3">

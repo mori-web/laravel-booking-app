@@ -19,9 +19,8 @@
         <img src="{{ asset('storage/images/' . pathinfo($plan->image, PATHINFO_BASENAME) ) }}" alt="">
       </div>
       @endif
-      <label for="image" class="form-label">画像</label>
       <x-input-error :messages="$errors->get('image')" />
-      <input class="form-control" type="file" name="image" id="image" value="{{ old('image', $plan->image) }}">
+      <input class="form-control-file" type="file" name="image" id="image" value="{{ old('image', $plan->image) }}">
     </div>
 
     <div class="form-group mb-3">
