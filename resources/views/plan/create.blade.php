@@ -7,13 +7,15 @@
     @csrf
 
     <div class="mb-3">
-      <label for="title" class="form-label">タイトル</label>
-      <input class="form-control" type="text" name="title" id="title" value="{{ old('title') }}">
+      <label for="name" class="form-label">プラン名</label>
+      <x-input-error :messages="$errors->get('name')" />
+      <input class="form-control" type="text" name="name" id="name" value="{{ old('name') }}">
     </div>
 
     <div class="form-group mb-3">
       <label for="price form-label">料金</label>
-      <select class="form-control" id="price">
+      <x-input-error :messages="$errors->get('price')" />
+      <select class="form-control" name="price" id="price">
         <option selected>料金を設定してください</option>
         <option value="10000">10,000円</option>
         <option value="20000">20,000円</option>
@@ -24,8 +26,15 @@
     </div>
 
     <div class="mb-3">
+      <label for="image" class="form-label">画像</label>
+      <x-input-error :messages="$errors->get('image')" />
+      <input class="form-control" type="file" name="image" id="image">
+    </div>
+
+    <div class="mb-3">
       <label for="description" class="form-label">説明</label>
-      <textarea class="form-control" name="description" id="description" rows="5"></textarea>
+      <x-input-error :messages="$errors->get('description')" />
+      <textarea class="form-control" name="description" id="description" rows="5">{{ old('description') }}</textarea>
     </div>
 
     <div class="d-flex">
