@@ -17,7 +17,6 @@ class PlanRequest extends FormRequest
         return [
             'name' => 'required|max:200',
             'price' => 'required',
-            'image' => 'max:200',
             'description' => 'required|max:1000',
         ];
     }
@@ -26,9 +25,8 @@ class PlanRequest extends FormRequest
     {
         return [
             'name.required' => '宿泊プラン名を入力してください',
-            'price' => '宿泊料金を入力してください',
-            'image' => '画像名を200文字以内にしてください',
-            'description' => '説明分を入力してください',
+            'price.required' => '宿泊料金を入力してください',
+            'description.required' => '説明分を入力してください',
         ];
     }
 }

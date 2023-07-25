@@ -3,7 +3,7 @@
 @section('title', '宿泊プラン作成ページ')
 
 @section('content')
-  <form action="{{ route('plan.store') }}" method="post">
+  <form action="{{ route('plan.store') }}" method="post" enctype="multipart/form-data">
     @csrf
 
     <div class="mb-3">
@@ -16,7 +16,6 @@
       <label for="price form-label">料金</label>
       <x-input-error :messages="$errors->get('price')" />
       <select class="form-control" name="price" id="price">
-        <option selected>料金を設定してください</option>
         <option value="10000">10,000円</option>
         <option value="20000">20,000円</option>
         <option value="30000">30,000円</option>
