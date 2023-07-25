@@ -29,9 +29,17 @@
             アクセス案内
           </x-nav-link>
 
+          <x-nav-link :href="route('plan.index')" :active="request()->routeIs('plan.index')">
+            宿泊プラン
+          </x-nav-link>
+
           @auth
+          {{-- <x-nav-link :href="route('plan.edit')" :active="request()->routeIs('plan.edit')">
+            宿泊プラン管理
+          </x-nav-link> --}}
+
           <x-nav-link :href="route('contact.index')" :active="request()->routeIs('contact.index')">
-            お問い合わせ一覧
+            お問い合わせ一覧管理
           </x-nav-link>
           @endauth
 

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\PlanController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Gate;
@@ -42,5 +43,11 @@ Route::get('/access', function () {
     return view('access');
 })->name('access');
 
-//お問い合わせページ(※resource)
+/*-----------------------------
+お問い合わせページ(※resource)
+-----------------------------*/
 Route::resource('/contact', ContactController::class);
+/*-----------------------------
+宿泊プラン
+-----------------------------*/
+Route::resource('/plan', PlanController::class);

@@ -4,7 +4,6 @@
 
 @section('content')
 <div class="container py-5">
-  <h1 class="mb-5">アクセス案内</h1>
 
   <!-- Google Map Embed -->
   <div class="row mb-4">

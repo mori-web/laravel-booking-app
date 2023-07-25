@@ -30,9 +30,14 @@
                 </header>
             @endif
 
+            @yield('top-fv')
+
             <!-- Page Content -->
             <main>
+              <div class="container-lg mt-5">
+                <h1 class="h1">@yield('title')</h1>
                 @yield('content')
+              </div>
             </main>
             
             @include('components.footer')
