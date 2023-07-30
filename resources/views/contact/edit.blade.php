@@ -3,8 +3,7 @@
 @section('title', 'お問い合わせ編集ページ')
 
 @section('content')
-<div class="container mt-5">
-  <h2 class="h2">お問い合わせ・編集ページ</h2>
+<div class="container mt-5 pb-3">
   <form action="{{ route('contact.update', $contact) }}" method="post">
     @csrf
     @method('patch')

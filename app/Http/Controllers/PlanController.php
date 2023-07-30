@@ -12,8 +12,8 @@ class PlanController extends Controller
 {
     public function index()
     {
-      $plans = Plan::orderBy('id','desc')->paginate(5);
-      return view('plan.index', compact('plans'));
+        $plans = Plan::orderBy('id', 'desc')->paginate(5);
+        return view('plan.index', compact('plans'));
     }
 
     public function create()
@@ -24,16 +24,16 @@ class PlanController extends Controller
     public function store(PlanRequest $request)
     {
         $validated = $request->validated();
-        $validated['image']= $request->file('image')->store('images','public');
+        $validated['image']= $request->file('image')->store('images', 'public');
         Plan::create($validated);
         return to_route('plan.index');
     }
 
     public function show(Plan $plan)
     {
-      return view('plan.show',compact('plan'));
+        return view('plan.show', compact('plan'));
     }
-    
+
     public function edit(Plan $plan)
     {
         return view('plan.edit', compact('plan'));

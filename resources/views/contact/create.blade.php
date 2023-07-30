@@ -3,7 +3,7 @@
 @section('title', 'お問い合わせページ')
 
 @section('content')
-<div class="container mt-5">
+<div class="container mt-5 pb-3">
   
   <form action="{{ route('contact.store') }}" method="post">
     

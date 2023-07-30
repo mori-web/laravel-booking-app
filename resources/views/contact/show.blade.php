@@ -3,8 +3,7 @@
 @section('title', 'お問い合わせ詳細ページ')
 
 @section('content')
-<div class="container mt-5">
-  <h2 class="h2">お問い合わせ・詳細ページ</h2>
+<div class="container mt-5 pb-3">
   <div class="card mb-4">
     <div class="card-header d-flex justify-content-between">
 

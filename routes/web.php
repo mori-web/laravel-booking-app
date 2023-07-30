@@ -51,3 +51,5 @@ Route::resource('/contact', ContactController::class);
 宿泊プラン
 -----------------------------*/
 Route::resource('/plan', PlanController::class);
+
+
