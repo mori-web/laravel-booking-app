@@ -9,19 +9,19 @@
     
     @csrf
     
-    <div class="mb-3">
+    <div class="mb-3 form-group">
       <label for="title" class="form-lavel">タイトル</label>
       <x-input-error :messages="$errors->get('title')" />
       <input type="text" name="title" id="title" class="form-control" value="{{ old('title') }}">
     </div>
     
-    <div class="mb-3">
+    <div class="mb-3 form-group">
       <label for="name" class="form-lavel">お名前</label>
       <x-input-error :messages="$errors->get('name')" />
       <input type="text" name="name" id="name" class="form-control" value="{{ old('name') }}">
     </div>
     
-    <div class="mb-3">
+    <div class="mb-3 form-group">
       <label for="email" class="form-lavel">メールアドレス</label>
       <x-input-error :messages="$errors->get('email')" />
       <input type="text" name="email" id="email" class="form-control" value="{{ old('email') }}">
