@@ -14,9 +14,10 @@
 @section('content')
 <div class="container">
   <div class="d-flex p-5">
-    <a class="block p-5" href="{{ route('top') }}">topページ</a>
+    <a class="block p-5" href="{{ route('top') }}">TOPページ</a>
     <a class="block ml-5 p-5" href="{{ route('access') }}">アクセスページ</a>
     <a class="block ml-5 p-5" href="{{ route('plan.index') }}">宿泊プランページ</a>
+    <a class="block ml-5 p-5" href="{{ route('room') }}">客室紹介ページ</a>
     <a class="block ml-5 p-5" href="{{ route('contact.create') }}">お問い合わせ</a>
   </div>
 </div>

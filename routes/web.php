@@ -40,7 +40,7 @@ Route::get('/', function () {
 
 // アクセスページ
 Route::get('/access', function () {
-    return view('access');
+    return view('access.index');
 })->name('access');
 
 // 客室ページ

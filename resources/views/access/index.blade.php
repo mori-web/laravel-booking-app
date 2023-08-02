@@ -33,6 +33,9 @@
           <p>有り：10台（無料）</p>
       </div>
   </div>
+  <div class="mt-5">
+    <a class="btn btn-outline-primary" onClick="history.back();">TOP</a>
+  </div>
 </div>
 @endsection
 
