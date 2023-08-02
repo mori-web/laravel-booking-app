@@ -43,6 +43,11 @@ Route::get('/access', function () {
     return view('access');
 })->name('access');
 
+// 客室ページ
+Route::get('/room', function () {
+    return view('room.index');
+})->name('room');
+
 /*-----------------------------
 お問い合わせページ(※resource)
 -----------------------------*/
@@ -51,5 +56,3 @@ Route::resource('/contact', ContactController::class);
 宿泊プラン
 -----------------------------*/
 Route::resource('/plan', PlanController::class);
-
-

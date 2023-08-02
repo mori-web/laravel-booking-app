@@ -33,6 +33,10 @@
             宿泊プラン
           </x-nav-link>
 
+          <x-nav-link :href="route('room')" :active="request()->routeIs('room')">
+            客室紹介ページ
+          </x-nav-link>
+
           @auth
           {{-- <x-nav-link :href="route('plan.edit')" :active="request()->routeIs('plan.edit')">
             宿泊プラン管理
