@@ -20,6 +20,8 @@
             <li class="list-group-item">冷蔵庫</li>
             <li class="list-group-item">テレビ</li>
             <li class="list-group-item">アメニティ</li>
+          </ul>
+          <ul class="list-group list-group-horizontal mt-3">
             <li class="list-group-item">エアコン</li>
             <li class="list-group-item">Wi-Fi</li>
           </ul>
@@ -42,9 +44,9 @@
             <li class="list-group-item">冷蔵庫</li>
             <li class="list-group-item">テレビ</li>
             <li class="list-group-item">アメニティ</li>
-            <li class="list-group-item">エアコン</li>
           </ul>
           <ul class="list-group list-group-horizontal mt-3">
+            <li class="list-group-item">エアコン</li>
             <li class="list-group-item">Wi-Fi</li>
             <li class="list-group-item">照明</li>
             <li class="list-group-item">空気清浄機</li>
@@ -68,11 +70,12 @@
             <li class="list-group-item">冷蔵庫</li>
             <li class="list-group-item">大型テレビ</li>
             <li class="list-group-item">アメニティ</li>
-            <li class="list-group-item">エアコン</li>
           </ul>
           <ul class="list-group list-group-horizontal mt-3">
+            <li class="list-group-item">エアコン</li>
             <li class="list-group-item">Wi-Fi</li>
             <li class="list-group-item">ユニットバス</li>
+            <li class="list-group-item">空気清浄機</li>
           </ul>
         </div>
       </div>
