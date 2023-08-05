@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.default.app')
 
 @section('title', '宿泊プラン 詳細ページ')
 

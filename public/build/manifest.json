@@ -5,13 +5,9 @@
     "src": "resources/css/app.css"
   },
   "resources/css/style.css": {
-    "file": "assets/style-c58561b8.css",
+    "file": "assets/style-4ed993c7.js",
     "isEntry": true,
     "src": "resources/css/style.css"
-  },
-  "resources/images/stay-fv.jpg": {
-    "file": "assets/stay-fv-943da1cb.jpg",
-    "src": "resources/images/stay-fv.jpg"
   },
   "resources/js/app.js": {
     "file": "assets/app-d5e6a928.js",

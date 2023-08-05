@@ -1,0 +1,23 @@
+
+.bg-image {
+  background-image: url("./images/stay-fv.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: calc(100vh - 1.95rem - 5.6rem);
+}
+
+.bg-text {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.content {
+  display:flex;
+	flex-direction:column;
+	min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}

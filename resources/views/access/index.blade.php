@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.default.app')
 
 @section('title', 'アクセス案内 - みんなシステムズ旅館')
 

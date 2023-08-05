@@ -7,13 +7,17 @@ use App\Models\Plan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
+use App\Services\PlanService;
 
 class PlanController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $plans = Plan::orderBy('id', 'desc')->paginate(5);
-        return view('plan.index', compact('plans'));
+        return view(
+            'plan.index',
+            ['plans' => Plan::orderBy('id', 'desc')->paginate(5),
+          'plan_searches' => PlanService::search($request->all())->paginate(3)]
+        );
     }
 
     public function create()
