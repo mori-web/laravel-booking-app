@@ -22,7 +22,7 @@
     </form>
 
     {{-- 検索結果 --}}
-    <h2 class="h2 mt-5">検索結果</h2>
+    <h2 class="h2 mt-5">検索一覧</h2>
     <ul class="list-group mt-3">
         @foreach ($plan_searches as $plan_search)
             <li class="list-group-item mb-3">
