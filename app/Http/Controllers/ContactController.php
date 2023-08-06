@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use App\Models\Contact;
 use Illuminate\Support\Facades\Gate;
 
-
 class ContactController extends Controller
 {
     //お問い合わせ一覧ページ(管理者)
@@ -16,13 +15,13 @@ class ContactController extends Controller
     {
         $contacts = Contact::orderBy('id', 'desc')->paginate(5);
         foreach($contacts as $contact) {
-          if($contact->status === 'unfinished') {
-            $contact->status = '未対応';
-          } else {
-            $contact->status = '対応済';
-          };
+            if($contact->status === 'unfinished') {
+                $contact->status = '未対応';
+            } else {
+                $contact->status = '対応済';
+            };
         }
-        return view('contact.index',compact('contacts'));
+        return view('contact.index', compact('contacts'));
     }
 
     //作成画面の表示
@@ -31,10 +30,21 @@ class ContactController extends Controller
         return view('contact.create');
     }
 
+    public function confirm(Request $request)
+    {
+      dd($request);
+      return view('contact.confirm', ['request' => $request]);
+    }
+
     // お問い合わせ内容の新規登録処理
     public function store(ContactRequest $request)
     {
         $contact = $request->validated();
+        if($request['contact_speed'] === 'off') {
+            $contact['contact_speed'] = 0;
+        } else {
+            $contact['contact_speed'] = 1;
+        }
         $contact['memo'] = '';
         $contact['status'] = 'unfinished';
         Contact::create($contact);
@@ -44,11 +54,11 @@ class ContactController extends Controller
     // 詳細ページの表示
     public function show(Contact $contact)
     {
-      if($contact->status === 'unfinished') {
-        $contact->status = '未対応';
-      } else {
-        $contact->status = '対応済';
-      };
+        if($contact->status === 'unfinished') {
+            $contact->status = '未対応';
+        } else {
+            $contact->status = '対応済';
+        };
         return view('contact.show', compact('contact'));
     }
 
@@ -61,9 +71,10 @@ class ContactController extends Controller
     // 更新の処理
     public function update(ContactUpdateRequest $request, Contact $contact)
     {
-      $validated = $request->validated();
-      $contact->update($validated);
-      return to_route('contact.index');
+        $validated = $request->validated();
+        $contact->user_id = auth()->user()->id;
+        $contact->update($validated);
+        return to_route('contact.index');
     }
 
     // 削除の処理

@@ -1,12 +1,11 @@
 @extends('layouts.default.app')
 
-@section('title', 'お問い合わせページ')
+@section('title', 'お問い合わせ確認ページ')
 
 @section('content')
     <div class="container mt-5 pb-3">
 
         <form action="{{ route('contact.store') }}" method="post">
-        {{-- <form action="{{ route('contact.confirm') }}" method="get"> --}}
 
             @csrf
 

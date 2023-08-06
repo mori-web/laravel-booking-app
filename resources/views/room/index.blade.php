@@ -82,8 +82,9 @@
     </div>
 
   </div>
-  <div class="mt-5">
+  <div class="my-3">
     <a class="btn btn-outline-primary" onClick="history.back();">TOP</a>
   </div>
+
 </div>
 @endsection

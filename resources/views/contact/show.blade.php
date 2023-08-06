@@ -13,6 +13,15 @@
           {{ $contact->title }}
         </h2>
         <p class="mt-4">お問い合わせ日時：{{ $contact->created_at->formatLocalized('%Y年%m月%d日 %H時%M分') }}</p>
+        <div class="mt-3">
+          <p>希望対応：
+              @if ($contact->contact_speed == 0)
+                  <span>普通</span>
+              @else
+                  <span class="text-danger">早急に</span>
+              @endif
+          </p>
+      </div>
         <p class="mt-5">管理者対応日時：{{ $contact->updated_at->formatLocalized('%Y年%m月%d日 %H時%M分') }}</p>
         <p class="mt-2 btn {{ $contact->status === '未対応' ? 'btn-primary' : 'btn-success' }}">対応状況：{{ $contact->status }}</p>
         <div class="mt-5">

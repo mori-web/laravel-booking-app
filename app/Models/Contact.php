@@ -16,6 +16,13 @@ class Contact extends Model
       'memo',
       'message',
       'status',
+      'contact_speed',
     ];
 
+    /*------------------------------------------------------------
+    リレーション
+    ------------------------------------------------------------*/
+    public function user() {
+      return $this->belongsTo('App\Models\User');
+    }
 }
