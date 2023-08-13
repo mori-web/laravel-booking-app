@@ -7,6 +7,7 @@ use App\Models\Plan;
 
 class PlanService
 {
+    //ローカルスコープ:searchアクション
     public static function search(array $params): Builder
     {
         $query = Plan::query();

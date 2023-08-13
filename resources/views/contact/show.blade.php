@@ -8,22 +8,36 @@
     <div class="card-header d-flex justify-content-between">
 
       <div class="mt-3">
-        
+
         <h2 class="h2">
           {{ $contact->title }}
         </h2>
-        <p class="mt-4">お問い合わせ日時：{{ $contact->created_at->formatLocalized('%Y年%m月%d日 %H時%M分') }}</p>
+        <p class="mt-4">お問い合わせ日時：
+          @if(isset($contact->created_at))
+          {{ $contact->created_at->format('%Y年%m月%d日 %H時%M分') }}
+          @endif
+        </p>
         <div class="mt-3">
-          <p>希望対応：
-              @if ($contact->contact_speed == 0)
-                  <span>普通</span>
-              @else
-                  <span class="text-danger">早急に</span>
-              @endif
+          <p>連絡速度：
+            @if ($contact->is_contact_speed === 0)
+            <span>普通</span>
+            @else
+            <span class="text-danger">早急に</span>
+            @endif
           </p>
-      </div>
-        <p class="mt-5">管理者対応日時：{{ $contact->updated_at->formatLocalized('%Y年%m月%d日 %H時%M分') }}</p>
-        <p class="mt-2 btn {{ $contact->status === '未対応' ? 'btn-primary' : 'btn-success' }}">対応状況：{{ $contact->status }}</p>
+        </div>
+        <p class="mt-5">管理者対応日時：
+          @if(isset($contact->updated_at))
+          {{ $contact->updated_at->formatLocalized('%Y年%m月%d日 %H時%M分') }}
+          @endif
+        </p>
+        <p class="mt-2">対応者：
+          @if(isset($contact->user->name))
+          {{ $contact->user->name }}
+          @endif
+        </p>
+        <p class="mt-2 btn {{ $contact->is_status === 1 ? 'btn-success' : 'btn-primary' }}">対応状況：{{ $contact->is_status
+          === 1 ? '対応済み' : '未対応' }}</p>
         <div class="mt-5">
           お名前：{{ $contact->name }} 様
         </div>
@@ -35,7 +49,7 @@
           {{ $contact->message }}
         </div>
       </div>
-      
+
     </div>
   </div>
   <div class="bg-white p-4">

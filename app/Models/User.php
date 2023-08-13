@@ -45,10 +45,4 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    //パスワードリセット再設定
-    public function sendPasswordResetNotification($token)
-    {
-        $url = url("reset-password/${token}");
-        $this->notify(new ResetPasswordNotification($url));
-    }
 }

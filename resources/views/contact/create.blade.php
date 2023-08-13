@@ -3,9 +3,9 @@
 @section('title', 'お問い合わせページ')
 
 @section('content')
-    <div class="container mt-5 pb-3">
+<div class="container mt-5 pb-3">
 
-        <form action="{{ route('contact.store') }}" method="post">
+    <form action="{{ route('contact.store') }}" method="post">
         {{-- <form action="{{ route('contact.confirm') }}" method="get"> --}}
 
             @csrf
@@ -29,15 +29,18 @@
             </div>
 
             <div class="mb-3 form-group">
-                <p class="mb-2">※営業日の際は、当日に返信させていただくようにしています。<br>お早めに返信をご希望の方は、早急を選択ください</p>
+                <p class="mb-2">※営業日は、当日に返信させていただくようにしています。<br>お早めに返信をご希望の方は、「早急」を選択ください</p>
                 <x-input-error :messages="$errors->get('contact_speed')" />
                 <div class="form-check form-check-inline align-middle pointer-on-hover">
                     <label for="standard" class="form-check-label">普通</label>
-                    <input type="radio" class="form-check-input" id="standard" name="contact_speed" value="off" {{ Request::get('contact_speed') ? (Request::get('contact_speed') == 'off' ? 'checked' : '') : 'checked' }}>
+                    <input type="radio" class="form-check-input" id="standard" name="contact_speed" value="off" {{
+                        Request::get('contact_speed') ? (Request::get('contact_speed')=='off' ? 'checked' : '' )
+                        : 'checked' }}>
                 </div>
                 <div class="form-check form-check-inline align-middle pointer-on-hover">
                     <label for="hurry_up" class="form-check-label">早急</label>
-                    <input type="radio" class="form-check-input" id="hurry_up" name="contact_speed" value="on" {{ Request::get('contact_speed') == 'off' ? 'checked' : '' }}>
+                    <input type="radio" class="form-check-input" id="hurry_up" name="contact_speed" value="on" {{
+                        Request::get('contact_speed')=='off' ? 'checked' : '' }}>
                 </div>
             </div>
 
@@ -57,5 +60,5 @@
             </div>
 
         </form>
-    </div>
+</div>
 @endsection

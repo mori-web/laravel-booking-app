@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('price');
             $table->string('image')->nullable();
             $table->text('description');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

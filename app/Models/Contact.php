@@ -15,7 +15,7 @@ class Contact extends Model
       'email',
       'memo',
       'message',
-      'status',
+      'is_status',
       'contact_speed',
     ];
 

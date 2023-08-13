@@ -9,7 +9,7 @@ class ContactUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'status' => 'required',
+            'is_status' => 'required',
             'memo' => 'max:1000'
         ];
     }
