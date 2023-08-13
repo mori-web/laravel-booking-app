@@ -32,21 +32,16 @@ class ContactController extends Controller
 
     public function confirm(Request $request)
     {
-      dd($request);
-      return view('contact.confirm', ['request' => $request]);
+        dd($request);
+        return view('contact.confirm', ['request' => $request]);
     }
 
     // お問い合わせ内容の新規登録処理
     public function store(ContactRequest $request)
     {
         $contact = $request->validated();
-        if($request['contact_speed'] === 'off') {
-            $contact['contact_speed'] = 0;
-        } else {
-            $contact['contact_speed'] = 1;
-        }
-        $contact['memo'] = '';
-        $contact['status'] = 'unfinished';
+        $contact['is_contact_speed'] = boolval($request['is_contact_speed']);
+        $contact['is_status'] = false;
         Contact::create($contact);
         return view('contact.thanks', compact('contact'));
     }

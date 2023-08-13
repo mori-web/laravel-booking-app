@@ -12,7 +12,7 @@
                 <h3 class="h3 mt-2">{{ $contact->title }}</h3>
                 <p class="mt-4">お問い合わせ日時：
                     @if(isset($contact->created_at))
-                    {{ $contact->created_at->format('%Y年%m月%d日 %H時%M分') }}
+                    {{ $contact->created_at->formatLocalized('%Y年%m月%d日 %H時%M分') }}
                     @endif
                 </p>
                 <p>対応担当者：
