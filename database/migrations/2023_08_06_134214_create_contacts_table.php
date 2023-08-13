@@ -23,6 +23,7 @@ return new class extends Migration
           $table->string('memo')->nullable();
           $table->string('status');
           $table->boolean('contact_speed');
+          $table->softDeletes();
           $table->timestamps();
         });
     }

@@ -83,7 +83,7 @@
 
   </div>
   <div class="my-3">
-    <a class="btn btn-outline-primary" onClick="history.back();">TOP</a>
+    <a href="{{ route('top') }}" class="btn btn-outline-primary">TOP</a>
   </div>
 
 </div>

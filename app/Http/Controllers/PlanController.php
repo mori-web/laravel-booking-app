@@ -17,7 +17,6 @@ class PlanController extends Controller
             'plan.index',
             ['plans' => Plan::orderBy('id', 'desc')->price()->paginate(5),
             'plan_searches' => PlanService::search($request->all())->paginate()]
-          
         );
     }
 

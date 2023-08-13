@@ -6,7 +6,23 @@
 
 <div class="card mt-5 mb-5">
   <div class="card-header">
-    {{ $plan->name }}
+    <div class="">
+      {{ $plan->name }}
+    </div>
+
+    <div class="d-flex">
+      <div class="ml-3">
+        {{-- <a class="btn btn-outline-primary" href="{{ route('comment.edit',$comment) }}">編集</a> --}}
+      </div>
+      <form action="{{ route('plan.destroy', $plan) }}" method="post">
+        @csrf
+        @method('delete')
+        <div class="ml-3">
+          <button type="submit" class="btn btn-outline-danger" onClick="return confirm('プランを削除しますか？');">削除</button>
+        </div>
+      </form>
+    </div>
+    
   </div>
   <div class="card-body">
 
