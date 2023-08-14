@@ -9,6 +9,7 @@ class Contact extends Model
 {
     use HasFactory;
 
+    // $fillableは「新規投稿」と「更新時」にも活用される
     protected $fillable = [
       'title',
       'name',
@@ -16,6 +17,7 @@ class Contact extends Model
       'message',
       'is_status',
       'is_contact_speed',
+      'memo',
     ];
 
     /*------------------------------------------------------------

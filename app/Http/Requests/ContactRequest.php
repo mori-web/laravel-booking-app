@@ -14,7 +14,6 @@ class ContactRequest extends FormRequest
           'email'=> 'required|max:100',
           'is_status' => '',
           'is_contact_speed' => 'required',
-          'memo' => 'max:1000',
           'message'=> 'required|max:1000',
         ];
     }
