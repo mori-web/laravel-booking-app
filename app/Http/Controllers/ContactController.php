@@ -7,6 +7,8 @@ use App\Http\Requests\ContactUpdateRequest;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\InquiryForm;
 
 class ContactController extends Controller
 {
@@ -30,15 +32,20 @@ class ContactController extends Controller
         return view('contact.create');
     }
 
-    public function confirm(Request $request)
-    {
-        dd($request);
-        return view('contact.confirm', ['request' => $request]);
-    }
+    // public function confirm(Request $request)
+    // {
+    //     dd($request);
+    //     return view('contact.confirm', ['request' => $request]);
+    // }
 
     // お問い合わせ内容の新規登録処理
     public function store(ContactRequest $request)
     {
+        $name = $request->name;
+        Mail::send(new InquiryForm($name));
+
+
+        
         $contact = $request->validated();
         $contact['is_contact_speed'] = boolval($request['is_contact_speed']);
         $contact['is_status'] = false;
