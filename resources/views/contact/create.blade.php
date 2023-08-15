@@ -5,8 +5,8 @@
 @section('content')
 <div class="container mt-5 pb-3">
 
-    <form action="{{ route('contact.store') }}" method="post">
-        {{-- <form action="{{ route('contact.confirm') }}" method="get"> --}}
+    {{-- <form action="{{ route('contact.store') }}" method="post"> --}}
+        <form action="{{ route('contact.confirm') }}" method="post">
 
             @csrf
 
@@ -52,7 +52,7 @@
 
             <div class="d-flex">
                 <div class="mt-2">
-                    <input type="submit" class="btn btn-outline-success" value="送信">
+                    <input type="submit" class="btn btn-outline-success" value="確認へ">
                 </div>
                 <div class="mt-2 ml-3">
                     <a class="btn btn-outline-primary" onClick="history.back()">戻る</a>

@@ -17,7 +17,7 @@
   ーーーーーーーーーーーーーーーーーーーーー
   <p>件名：{{$contact['title']}}</p>
   <p>メールアドレス：{{$contact['email']}}</p>
-  <p>希望対応 : {{ $contact['is_contact_speed'] === 0 ? '普通' : '早急' }} </p>
+  <p>希望対応 : {{ $contact['is_contact_speed'] === false ? '普通' : '早急' }} </p>
   <p>お問い合わせ内容：{{$contact['message']}}</p>
   ーーーーーーーーーーーーーーーーーーーーー
 </body>

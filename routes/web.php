@@ -53,7 +53,7 @@ Route::get('/room', function () {
 -----------------------------*/
 Route::resource('/contact', ContactController::class);
 
-// Route::get('/contact/confirm', [ContactController::class,'confirm'])->name('contact.confirm');
+Route::post('/contact/confirm', [ContactController::class,'confirm'])->name('contact.confirm');
 /*-----------------------------
 宿泊プラン
 -----------------------------*/
