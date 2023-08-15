@@ -9,6 +9,7 @@ use App\Models\Contact;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\InquiryForm;
+use App\Mail\AdminInquiryForm;
 
 class ContactController extends Controller
 {
@@ -40,16 +41,19 @@ class ContactController extends Controller
 
     // お問い合わせ内容の新規登録処理
     public function store(ContactRequest $request)
-    {
-        $name = $request->name;
-        Mail::send(new InquiryForm($name));
-
-
-        
+    {        
         $contact = $request->validated();
         $contact['is_contact_speed'] = boolval($request['is_contact_speed']);
         $contact['is_status'] = false;
         Contact::create($contact);
+
+        /*-------------------------------------
+        メールの設定
+        -------------------------------------*/
+        // 管理者へメール通知
+        Mail::to(config('mail.admin'))->send(new AdminInquiryForm($contact));
+        // ユーザーへメール通知
+        Mail::to($contact['email'])->send(new InquiryForm($contact));
         return view('contact.thanks', compact('contact'));
     }
 

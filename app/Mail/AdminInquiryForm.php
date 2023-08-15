@@ -9,9 +9,10 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class InquiryForm extends Mailable
+class AdminInquiryForm extends Mailable
 {
-    use Queueable, SerializesModels;
+    use Queueable;
+    use SerializesModels;
 
     public $contact;
 
@@ -21,9 +22,10 @@ class InquiryForm extends Mailable
         $this->contact = $contact;
     }
 
-    public function build() {
-        return $this->subject('お問い合わせを受け付けました')//件名
-                ->view('inquiry.mail')//本文
+    public function build()
+    {
+        return $this->subject('【お客様からお問い合わせを受け付けました】')//件名
+                ->view('inquiry.Admin_mail')//本文
                 ->with(['contact'=>$this->contact]);//本文に送る値
     }
 
