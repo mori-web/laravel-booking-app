@@ -24,7 +24,7 @@
 
             <div class="mt-3">
                 <p>希望対応：
-                    @if ($contact->is_contact_speed === 0)
+                    @if (!$contact->is_contact_speed)
                         <span>普通</span>
                     @else
                         <span class="text-danger">早急に</span>
@@ -36,7 +36,7 @@
                 対応状況
                 <div class="form-check">
                     <input class="form-check-input" type="radio" value="0" id="flexCheckDefault" name="is_status"
-                        {{ $contact->is_status === 0 ? 'checked' : '' }}>
+                        {{ !$contact->is_status ? 'checked' : '' }}>
                     <label class="form-check-label" for="flexCheckDefault">
                         未対応
                     </label>

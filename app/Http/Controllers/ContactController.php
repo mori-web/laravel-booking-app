@@ -36,7 +36,6 @@ class ContactController extends Controller
     //お問い合わせ確認画面の表示
     public function confirm(Request $request)
     {
-        $contact['is_contact_speed'] = boolval($request['is_contact_speed']);
         $contact = $request;
         return view('contact.confirm', ['contact' => $request]);
     }

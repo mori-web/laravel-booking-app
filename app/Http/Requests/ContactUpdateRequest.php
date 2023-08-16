@@ -10,7 +10,7 @@ class ContactUpdateRequest extends FormRequest
     {
         return [
             'is_status' => 'required',
-            'memo' => 'required|max:1000',
+            'memo' => 'max:1000',
         ];
     }
     public function messages()

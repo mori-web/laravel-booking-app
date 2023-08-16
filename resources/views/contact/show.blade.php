@@ -19,7 +19,7 @@
         </p>
         <div class="mt-3">
           <p>連絡速度：
-            @if ($contact->is_contact_speed === 0)
+            @if (!$contact->is_contact_speed)
             <span>普通</span>
             @else
             <span class="text-danger">早急に</span>
@@ -36,8 +36,8 @@
           {{ $contact->user->name }}
           @endif
         </p>
-        <p class="mt-2 btn {{ $contact->is_status === 1 ? 'btn-success' : 'btn-primary' }}">対応状況：{{ $contact->is_status
-          === 1 ? '対応済み' : '未対応' }}</p>
+        <p class="mt-2 btn {{ $contact->is_status ? 'btn-success' : 'btn-primary' }}">対応状況：{{ $contact->is_status
+          ? '対応済み' : '未対応' }}</p>
         <div class="mt-5">
           お名前：{{ $contact->name }} 様
         </div>

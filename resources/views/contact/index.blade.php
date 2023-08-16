@@ -20,7 +20,7 @@
                     {{ $contact->user->name }}
                     @endif
                 </p>
-                <p class="mt-4 btn {{ $contact->is_status === 1 ? 'btn-success' : 'btn-primary' }}">
+                <p class="mt-4 btn {{ $contact->is_status ? 'btn-success' : 'btn-primary' }}">
                     対応状況：{{ $contact->is_status ? '対応済' : '未対応' }}</p>
                 <p class="mt-4">{{ $contact->name }} 様</p>
                 <p class="mt-2 mb-3">
@@ -28,7 +28,7 @@
                 </p>
                 <div class="mt-3">
                     <p>希望対応：
-                        @if ($contact->is_contact_speed === 0)
+                        @if (!$contact->is_contact_speed)
                         <span>普通</span>
                         @else
                         <span class="text-danger">早急に</span>
