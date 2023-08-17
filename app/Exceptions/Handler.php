@@ -47,4 +47,10 @@ class Handler extends ExceptionHandler
             //
         });
     }
+
+    protected function renderHttpException($e)
+    {
+        $status = $e->getStatusCode();
+        return response()->view("errors.common", ['exception' => $e]);
+    }
 }

@@ -17,6 +17,42 @@ use Illuminate\Support\Facades\Gate;
 |
 */
 
+Route::get('400', function () {
+    \Log::error('400エラーのテスト');
+    abort(400); //500のHTTPステータスコードを返す指定
+});
+Route::get('401', function () {
+    \Log::error('401エラーのテスト');
+    abort(401); //500のHTTPステータスコードを返す指定
+});
+Route::get('403', function () {
+    \Log::error('403エラーのテスト');
+    abort(403); //500のHTTPステータスコードを返す指定
+});
+Route::get('404', function () {
+    \Log::error('404エラーのテスト');
+    abort(404); //500のHTTPステータスコードを返す指定
+});
+Route::get('408', function () {
+    \Log::error('408エラーのテスト');
+    abort(408); //500のHTTPステータスコードを返す指定
+});
+Route::get('414', function () {
+    \Log::error('414エラーのテスト');
+    abort(414); //500のHTTPステータスコードを返す指定
+});
+Route::get('419', function () {
+    \Log::error('419エラーのテスト');
+    abort(419); //500のHTTPステータスコードを返す指定
+});
+Route::get('500', function () {
+    \Log::error('500エラーのテスト');
+    abort(500); //500のHTTPステータスコードを返す指定
+});
+Route::get('503', function () {
+    \Log::error('503エラーのテスト');
+    abort(503); //500のHTTPステータスコードを返す指定
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

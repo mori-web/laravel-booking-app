@@ -5,7 +5,6 @@
 @section('content')
 <div class="container mt-5 pb-3">
 
-    {{-- <form action="{{ route('contact.store') }}" method="post"> --}}
         <form action="{{ route('contact.confirm') }}" method="post">
 
             @csrf
